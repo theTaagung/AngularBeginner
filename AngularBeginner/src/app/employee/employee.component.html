@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Employee List</h2>
+ 
+  <div class="table-responsive">          
+  <table class="table" *ngIf = 'employees && employees.length' >
+    <thead>
+      <tr>        
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Project Id</th>       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = 'let employee of employees'>
+        <td>{{employee.employeeId}}</td>
+        <td>{{employee.employeeName}}</td>
+        <td [ngStyle]="{'background-color':employee.projectId == '101' ? 'green' : 'red' }">{{employee.projectId}}</td>
+     </tr>
+    </tbody>
+  </table>
+  <div>
+  <button (click)="onClickInformation()">Information</button>
+   {{information}}
+  </div>
+  <p></p>
+   <div>
+   <label>name:
+    <input [(ngModel)]="name" placeholder=" Type your name here">
+  </label>
+  Hi {{name}} !!
+</div>
+  </div>
+</div>
